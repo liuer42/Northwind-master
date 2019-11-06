@@ -1,0 +1,94 @@
+﻿body {
+    /*font-family: 'Fjalla One', sans-serif;*/
+    font-family: 'Londrina Sketch', cursive;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #565b61;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.1em;
+}
+
+h1.animated {
+    display: inline-block;
+}
+
+#page-content {
+    flex: 1 0 auto;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background: white;
+    /*border: 5px;
+    border-color: black;
+    border-style: solid;*/
+    
+}
+
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: dimgray;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+    padding: 0 10px;
+    width: 350px;
+    caret-color: red;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white
+}
+
+#sticky-footer {
+    flex-shrink: none;
+}
+
+footer{
+    height: 40px;
+    position:fixed;
+    bottom: 0;
+    
+}
+.footer p {
+    margin-bottom: 30px;
+}

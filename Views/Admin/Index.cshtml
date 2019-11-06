@@ -1,0 +1,33 @@
+﻿@using  Northwind.Models
+@model IEnumerable<AppUser>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Users</h3>
+<table class="table table-sm table-bordered">
+    <tr><th>ID</th><th>Name</th><th>Email</th></tr>
+    
+    @if (!Model.Any())
+    {
+        <tr><td colspan="3" class="text-center">No User Accounts</td></tr>
+    }
+    else
+    {
+        @foreach (AppUser user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@user.Id">Edit</a><button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<a class="btn btn-primary" asp-action="Create">Create</a>
