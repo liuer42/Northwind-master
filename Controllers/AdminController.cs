@@ -27,7 +27,7 @@ namespace Northwind.Controllers
             _passwordHasher = passwordHasher;
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "User")]
         public IActionResult Index()
         {
             return View(_userManager.Users);
@@ -69,6 +69,7 @@ namespace Northwind.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Moderator")]
         public async Task<IActionResult> Delete(string id)
         {
             var user = await _userManager.FindByIdAsync(id);

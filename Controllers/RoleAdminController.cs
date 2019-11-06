@@ -36,6 +36,7 @@ namespace Northwind.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create([Required] string name)
         {
@@ -113,7 +114,7 @@ namespace Northwind.Controllers
                 ModelState.AddModelError("", error.Description);
             }
         }
-
+        [Authorize(Roles = "Moderator")]
         public async Task<IActionResult> Delete(string id)
         {
             IdentityRole role = await _roleManager.FindByIdAsync(id);
